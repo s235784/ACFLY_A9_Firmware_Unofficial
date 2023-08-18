@@ -1942,7 +1942,8 @@ RTL:
 					Position_Control_set_TargetVelocityZ(-50);
 				}
 				else if( msg.cmd == 1084 )
-				{	//SET_POSITION_TARGET_LOCAL_NED
+				{ //SET_POSITION_TARGET_LOCAL_NED 已弃用
+					// 官方的速度/位置控制相关代码，已在后面自行实现，可直接删去
 					// 正在执行是 Position_ControlMode_OffBoard，执行完成是 Position_ControlMode_Locking
 					debug_extra = (int) msg.frame;
 					
@@ -2208,7 +2209,7 @@ RTL:
 					}
 				}
 				else if( msg.cmd == 1086 )
-				{	//SET_POSITION_TARGET_GLOBAL_INT
+				{	//SET_POSITION_TARGET_GLOBAL_INT 已弃用
 					uint16_t type_mask = msg.params[0];
 					//thr
 					if( (type_mask&POSITION_TARGET_TYPEMASK_Z_IGNORE)==0 )
